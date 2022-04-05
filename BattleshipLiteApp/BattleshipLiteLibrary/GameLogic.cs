@@ -166,7 +166,22 @@ namespace BattleshipLiteLibrary
         }
         public static void MarkShotResult(PlayerInfoModel activePlayer, string row, int column, bool isAHit)
         {
-            throw new NotImplementedException();
+
+            foreach (var gridSpot in activePlayer.ShotGrid)
+            {
+                if (gridSpot.SpotLetter == row.ToUpper() && gridSpot.SpotNumber == column)
+                {
+                    if (isAHit)
+                    {
+                        gridSpot.Status = GridSpotStatus.Hit;
+                    }
+                    else
+                    {
+                        gridSpot.Status = GridSpotStatus.Miss;
+                    }
+                }
+            }
+
         }
     }
 }
