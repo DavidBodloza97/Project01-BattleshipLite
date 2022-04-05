@@ -8,8 +8,8 @@ namespace BattleshipLiteLibrary.Models
 {
     public class GridSpotModel
     {
-        public string SpotNumber { get; set; }
-        public int SpotLetter { get; set; }
+        public string SpotLetter { get; set; }
+        public int SpotNumber { get; set; }
         public GridSpotStatus Status { get; set; } = GridSpotStatus.Empty;
     }
 }
